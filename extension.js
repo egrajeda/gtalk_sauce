@@ -1,12 +1,11 @@
 $(".dw").live("DOMNodeInserted", throttle(function() {
-  console.log("onDOMNodeInserted");
-  var chatWindows = $(this).find(".nH.nn");
+  var chatWindows = $(this).find(".nH.nn:not(:first-child):not(:last-child)");
   chatWindows.each(function() {
     if ($(this).find("img.Hi.o3").length == 0) {
       return;
     }
-    $(this).width(400);
-    $(this).find(".nH.nn:first-child").width(395);
+    $(this).animate({width: 400});
+    $(this).find(".nH.nn:first-child").animate({width: 395});
   });
 }));
 
@@ -17,6 +16,6 @@ function throttle(f) {
     clearTimeout(timeout);
     timeout = setTimeout(function() {
       f.apply(context);  
-    }, 100);
+    }, 250);
   }
 }
