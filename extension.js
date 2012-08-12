@@ -9,6 +9,14 @@ $(".dw").live("DOMNodeInserted", throttle(function() {
   });
 }));
 
+$("div[role=log]").live("DOMNodeInserted", function(e) {
+    var node = e.target;
+    var link = $(node).is("a") ? $(node) : $(node).find("a");
+    if (link.is("[href$='.gif'],[href$='.jpg'],[href$='.png']")) {
+        link.html($("<img>", {src: link.attr("href"), style: "max-width: 100px;"}));
+    }
+});
+
 function throttle(f) {
   var timeout;
   return function() {
