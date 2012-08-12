@@ -1,8 +1,8 @@
 {
-    "name": "Google Talk Sauce",
-    "version": "0.1",
+    "name": "Sauce for Google Talk",
+    "version": "0.1.1",
     "manifest_version": 2,
-    "description": "",
+    "description": "Some small enhacements for the Gmail's embedded Google Talk client.",
     "content_scripts": [
         {
             "matches": ["*://mail.google.com/mail*"],
