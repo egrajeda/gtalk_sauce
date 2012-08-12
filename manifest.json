@@ -1,0 +1,15 @@
+{
+    "name": "Google Talk Sauce",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "",
+    "content_scripts": [
+        {
+            "matches": ["*://mail.google.com/mail*"],
+            "js": ["jquery.js", "extension.js"],
+            "css": ["extension.css"],
+            "run_at": "document_start",
+            "all_frames": false
+        }
+    ]
+}
